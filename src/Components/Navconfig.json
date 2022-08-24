@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Dashboard",
+        "link": "/"
+    },
+    {
+        "id": 2,
+        "title": "Product",
+        "link": "/"
+    },
+    {
+        "id": 3,
+        "title": "Zone",
+        "link": "/"
+    },
+    {
+        "id": 4,
+        "title": "Salesman",
+        "link": "/"
+    },
+    {
+        "id": 5,
+        "title": "Daily load",
+        "link": "/"
+    },
+    {
+        "id": 6,
+        "title": "Report",
+        "link": "/"
+    }
+]
