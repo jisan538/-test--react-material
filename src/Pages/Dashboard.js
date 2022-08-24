@@ -17,6 +17,7 @@ export default function Dashboard() {
         }}
       >
         <Toolbar />
+        <Typography paragraph>Hello, Welcome back!</Typography>
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
