@@ -26,7 +26,6 @@ function Sidebar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
   const drawer = (
     <div>
       <Toolbar />
@@ -104,8 +103,6 @@ function Sidebar(props) {
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            bgcolor: 'background.default',
-              borderRightStyle: 'dashed',
           }}
         >
           {drawer}
