@@ -1,33 +1,31 @@
 import * as React from "react";
 import { useState } from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import ReactLogo from "../Assets/Logo.svg";
-import MenuOpenRoundedIcon from "@mui/icons-material/MenuOpenRounded";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
-import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
-import MyLocationOutlinedIcon from '@mui/icons-material/MyLocationOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import HourglassEmptyOutlinedIcon from '@mui/icons-material/HourglassEmptyOutlined';
-import ContentPasteOutlinedIcon from '@mui/icons-material/ContentPasteOutlined';
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import HourglassEmptyOutlinedIcon from "@mui/icons-material/HourglassEmptyOutlined";
+import ContentPasteOutlinedIcon from "@mui/icons-material/ContentPasteOutlined";
 import navData from "./Navconfig.json";
 import "./Style/Sidebar.css";
 import Navbar from "./Navbar";
-const drawerWidth = 240;
+import { Avatar, Typography } from "@mui/material";
+import Profile from "../Assets/Images/profile.jpg";
+const drawerWidth = 280;
 
 function Sidebar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
+    // eslint-disable-next-line
     const [navItem, setNavItem] = useState(navData);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -38,6 +36,32 @@ function Sidebar(props) {
             <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
                 {/* <Logo /> */}
                 <img src={ReactLogo} alt="React Logo" />
+            </Box>
+
+            <Box sx={{ mb: 5, mx: 2.5 }}>
+                <Box className="accountStyle">
+                    <Box>
+                        <Avatar
+                            src={Profile}
+                            alt="photoURL"
+                            sx={{ width: 56, height: 56 }}
+                        />
+                    </Box>
+                    <Box sx={{ ml: 2 }}>
+                        <Typography
+                            variant="subtitle2"
+                            sx={{ color: "text.primary" }}
+                        >
+                            Rabiul Islam Babu
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{ color: "text.secondary" }}
+                        >
+                            Admin
+                        </Typography>
+                    </Box>
+                </Box>
             </Box>
             <List>
                 {navItem.map((item) => (
@@ -74,7 +98,7 @@ function Sidebar(props) {
     return (
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
-            <Navbar handleDrawerToggle={handleDrawerToggle}/>
+            <Navbar handleDrawerToggle={handleDrawerToggle} />
             <Box
                 component="nav"
                 sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}

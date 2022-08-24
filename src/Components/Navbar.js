@@ -1,8 +1,8 @@
-import { AppBar, Box, Container, IconButton, Toolbar } from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 import MenuOpenRoundedIcon from "@mui/icons-material/MenuOpenRounded";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 export default function Navbar({ handleDrawerToggle }) {
     return (
