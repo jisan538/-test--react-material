@@ -1,9 +1,13 @@
-import Dashboard from "./Pages/Dashboard";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import MainRoute from "./Components/MainRoute";
+
 
 function App() {
   return (
-    <Dashboard/>
+    <BrowserRouter>
+        <MainRoute/>
+    </BrowserRouter>
   );
 }
 

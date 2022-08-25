@@ -7,26 +7,26 @@
     {
         "id": 2,
         "title": "Product",
-        "link": "/"
+        "link": "/product"
     },
     {
         "id": 3,
         "title": "Zone",
-        "link": "/"
+        "link": "/product"
     },
     {
         "id": 4,
         "title": "Salesman",
-        "link": "/"
+        "link": "/product"
     },
     {
         "id": 5,
         "title": "Daily load",
-        "link": "/"
+        "link": "/product"
     },
     {
         "id": 6,
         "title": "Report",
-        "link": "/"
+        "link": "/product"
     }
 ]
