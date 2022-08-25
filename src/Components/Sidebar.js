@@ -60,13 +60,8 @@ function Sidebar(props) {
       </Box>
       <List>
         {navItem.map((item) => (
-            <ListItem
-              key={item.id}
-              disablePadding
-              className={`${item.id === 1 ? "active" : "regular"}`}
-              sx={{ ml: 1.5 }}
-            >
           <Link to={item.link}>
+            <ListItem key={item.id} disablePadding sx={{ ml: 1.5 }}>
               <ListItemButton>
                 <ListItemIcon
                   className={`${item.id === 1 ? "active-icon" : "icon"}`}
@@ -80,8 +75,8 @@ function Sidebar(props) {
                 </ListItemIcon>
                 <ListItemText primary={item.title} />
               </ListItemButton>
-          </Link>
             </ListItem>
+          </Link>
         ))}
       </List>
     </div>
