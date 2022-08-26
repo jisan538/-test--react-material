@@ -9,8 +9,8 @@ export default function Navbar({ handleDrawerToggle }) {
         <AppBar
             position="fixed"
             sx={{
-                width: { sm: `calc(100% - ${drawerWidth}px)` },
-                ml: { sm: `${drawerWidth}px` },
+                width: { lg: `calc(100% - ${drawerWidth}px)` },
+                ml: { lg: `${drawerWidth}px` },
             }}
             style={{
                 backgroundColor: "rgba(255, 255, 255, 0.04)",
@@ -24,7 +24,7 @@ export default function Navbar({ handleDrawerToggle }) {
                     aria-label="open drawer"
                     edge="start"
                     onClick={handleDrawerToggle}
-                    sx={{ mr: 2, display: { sm: "none" } }}
+                    sx={{ mr: 2, display: { lg: "none" } }}
                 >
                     <MenuOpenRoundedIcon />
                 </IconButton>

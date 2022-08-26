@@ -1,6 +1,7 @@
-import { Box, Toolbar, Typography } from "@mui/material";
+import { Box,Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../Components/Sidebar";
+import StateCard from "./Components/StateCard";
 
 export default function Dashboard() {
   const drawerWidth = 280;
@@ -12,14 +13,15 @@ export default function Dashboard() {
         component="main"
         sx={{
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { lg: `calc(100% - ${drawerWidth}px)` },
+          ml: { lg: `${drawerWidth}px` },
         }}
       >
         <Toolbar />
         <Typography variant="h4" sx={{ mb: 5 }}>
           Hi, Welcome back
         </Typography>
+        <StateCard sx={{ mb: 5 }}/>
       </Box>
     </Box>
   );

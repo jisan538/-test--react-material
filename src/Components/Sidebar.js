@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
@@ -31,6 +31,13 @@ function Sidebar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    fontWeight: 700,
+    color: '#637381'
+  };
+  const { pathname } = useLocation();
 
   const drawer = (
     <div>
@@ -60,11 +67,11 @@ function Sidebar(props) {
       </Box>
       <List>
         {navItem.map((item) => (
-          <Link to={item.link}>
-            <ListItem key={item.id} disablePadding sx={{ ml: 1.5 }}>
+          <Link to={item.link} style={linkStyle}>
+            <ListItem key={item.id} disablePadding sx={{ ml: 1.5 }}  className={`${pathname===item.link?"active":"regular"}`}>
               <ListItemButton>
                 <ListItemIcon
-                  className={`${item.id === 1 ? "active-icon" : "icon"}`}
+                  className={`${pathname===item.link ? "active-icon" : "icon"}`}
                 >
                   {item.id === 1 && <WidgetsOutlinedIcon />}
                   {item.id === 2 && <Inventory2OutlinedIcon />}
@@ -104,7 +111,7 @@ function Sidebar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
@@ -116,7 +123,7 @@ function Sidebar(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: "none", sm: "block" },
+            display: { xs: "none", lg: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

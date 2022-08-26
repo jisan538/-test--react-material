@@ -12,21 +12,21 @@
     {
         "id": 3,
         "title": "Zone",
-        "link": "/product"
+        "link": "/zone"
     },
     {
         "id": 4,
         "title": "Salesman",
-        "link": "/product"
+        "link": "/salesman"
     },
     {
         "id": 5,
         "title": "Daily load",
-        "link": "/product"
+        "link": "/daily-load"
     },
     {
         "id": 6,
         "title": "Report",
-        "link": "/product"
+        "link": "/report"
     }
 ]

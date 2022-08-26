@@ -1,0 +1,16 @@
+.card {
+  padding: 32px 16px;
+  border-radius: 20px;
+}
+.weekly-sales {
+  background: linear-gradient(180deg, #cd6cf3 0%, #4046e2 100%);
+}
+.zone {
+  background: linear-gradient(180deg, #f75c89 0%, #c11ab9 100%);
+}
+.sales-man {
+  background: linear-gradient(180deg, #feb61f 0%, #df9036 100%);
+}
+.product {
+  background: linear-gradient(180deg, #fe1fe8 0%, #df3654 100%);
+}
