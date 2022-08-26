@@ -67,7 +67,7 @@ function Sidebar(props) {
       </Box>
       <List>
         {navItem.map((item) => (
-          <Link to={item.link} style={linkStyle}>
+          <Link to={item.link} style={linkStyle} key={item.id}>
             <ListItem key={item.id} disablePadding sx={{ ml: 1.5 }}  className={`${pathname===item.link?"active":"regular"}`}>
               <ListItemButton>
                 <ListItemIcon
