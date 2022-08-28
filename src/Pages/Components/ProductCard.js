@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
-import food from "../../Assets/Images/fresh-butter-cookies-biscuit-jar-900-gm.jpg";
 import { Box } from "@mui/system";
 import productData from "../../Assets/product.json";
 export default function ProductCard() {
@@ -11,7 +10,7 @@ export default function ProductCard() {
       {product.map((data) => (
         <Grid item xs={12} sm={6} md={3} key={data.id}>
           <Card>
-           <CardMedia
+            <CardMedia
               component="img"
               alt="green iguana"
               height="280"
@@ -19,9 +18,7 @@ export default function ProductCard() {
               sx={{ objectFit: "contain" }}
             />
             <CardContent>
-              <Typography variant="h6">
-                Fresh Butter Cookies-Jar 900gX6PC
-              </Typography>
+              <Typography variant="h6" sx={{height:"80px"}}>{data.title}</Typography>
               <Box
                 sx={{
                   display: "flex",
@@ -30,11 +27,23 @@ export default function ProductCard() {
                   mt: 2,
                 }}
               >
-                <Typography variant="p" sx={{ color: "green" }}>
-                  Stock Available(20)
-                </Typography>
+                {data.stock > 19 && (
+                  <Typography variant="p" sx={{ color: "green" }}>
+                    Stock Available({data.stock})
+                  </Typography>
+                )}
+                {(data.stock < 19 && data.stock > 1) &&  (
+                  <Typography variant="p" sx={{ color: "orange" }}>
+                    Stock Limited({data.stock})
+                  </Typography>
+                )}
+                {data.stock === 0 &&  (
+                  <Typography variant="p" sx={{ color: "red" }}>
+                    Stock out
+                  </Typography>
+                )}
                 <Typography variant="h6" sx={{ color: "red", fontWeight: 700 }}>
-                  ৳760
+                  ৳{data.price}
                 </Typography>
               </Box>
             </CardContent>
