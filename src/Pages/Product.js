@@ -9,14 +9,20 @@ import {
     Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import ProductCard from "./Components/ProductCard";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import productData from "../Assets/product.json";
 
 export default function Product() {
     const drawerWidth = 280;
-
+    const [product, setProduct] = useState(productData);
+    const [searchByName, setSearchByName] = useState("");
+    const handleOnChange=(event)=>{
+      console.log(event.target.value);
+      setSearchByName(event.target.value)
+    }
     return (
         <Box>
             <Sidebar />
@@ -38,6 +44,7 @@ export default function Product() {
                         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"
+                                onChange={handleOnChange}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <SearchOutlinedIcon />
@@ -51,7 +58,7 @@ export default function Product() {
                             />
                         </FormControl>
                     </Box>
-                    <ProductCard />
+                    <ProductCard product={product} searchByName={searchByName}/>
                 </Container>
             </Box>
         </Box>

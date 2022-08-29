@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import productData from "../../Assets/product.json";
-export default function ProductCard() {
+export default function ProductCard({product,searchByName}) {
     //eslint-disable-next-line
-    const [product, setProduct] = useState(productData);
     return (
         <Grid container spacing={3}>
-            {product.map((data) => (
+            {product.filter((data) => {
+              if (searchByName === "") {
+                return data;
+              } else if (
+                data.title
+                  .toLowerCase()
+                  .includes(searchByName.toLowerCase())
+              ) {
+                return data;
+              }
+            }).map((data) => (
                 <Grid item xs={12} sm={6} md={3} key={data.id}>
                     <Card>
                         <Box sx={{ position: "relative" }}>
