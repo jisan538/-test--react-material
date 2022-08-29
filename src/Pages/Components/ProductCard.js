@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 export default function ProductCard({product,searchByName}) {
