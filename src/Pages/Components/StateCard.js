@@ -13,11 +13,12 @@ export default function StateCard() {
             className={`card ${data.id === 1 && "weekly-sales"} ${
               data.id === 2 && "product"
             } ${data.id === 3 && "zone"} ${data.id === 4 && "sales-man"}`}
+            sx={{borderRadius:"20px"}}
           >
-            <Typography variant="h2" sx={{color: "white"}}>
+            <Typography variant="h2" sx={{color: "white",fontWeight: 'medium', mb:2}}>
               {data.state}
             </Typography>
-            <Typography variant="p" sx={{color: "white"}}>{data.title}</Typography>
+            <Typography variant="p" sx={{color: "white",fontWeight: 'light'}}>{data.title}</Typography>
           </Card>
         </Grid>
       ))}
