@@ -1,7 +1,6 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../Components/Sidebar";
-import BarChart from "./Components/BarChart";
 import StateCard from "./Components/StateCard";
 
 export default function Dashboard() {
