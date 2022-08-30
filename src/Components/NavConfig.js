@@ -1,16 +1,16 @@
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
-import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import HourglassEmptyOutlinedIcon from "@mui/icons-material/HourglassEmptyOutlined";
 import ContentPasteOutlinedIcon from "@mui/icons-material/ContentPasteOutlined";
+import AutoAwesomeMosaicOutlinedIcon from '@mui/icons-material/AutoAwesomeMosaicOutlined';
 
 const navConfig = [
     {
         id: 1,
         title: "Dashboard",
         link: "/",
-        icon: <WidgetsOutlinedIcon />,
+        icon: <AutoAwesomeMosaicOutlinedIcon />,
     },
     {
         id: 2,
