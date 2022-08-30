@@ -10,132 +10,135 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ReactLogo from "../Assets/Logo.svg";
-import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
-import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import HourglassEmptyOutlinedIcon from "@mui/icons-material/HourglassEmptyOutlined";
-import ContentPasteOutlinedIcon from "@mui/icons-material/ContentPasteOutlined";
-import navData from "./Navconfig.json";
 import "./Style/Sidebar.css";
 import Navbar from "./Navbar";
+import navConfig from "./NavConfig";
 import { Avatar, Typography } from "@mui/material";
 import Profile from "../Assets/Images/profile.jpg";
 const drawerWidth = 280;
 
 function Sidebar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
-  // eslint-disable-next-line
-  const [navItem, setNavItem] = useState(navData);
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-  const linkStyle = {
-    margin: "1rem",
-    textDecoration: "none",
-    fontWeight: 700,
-    color: '#637381'
-  };
-  const { pathname } = useLocation();
+    const { window } = props;
+    const [mobileOpen, setMobileOpen] = useState(false);
+    // eslint-disable-next-line
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+    const linkStyle = {
+        margin: "1rem",
+        textDecoration: "none",
+        fontWeight: 700,
+    };
+    const { pathname } = useLocation();
+    const drawer = (
+        <div>
+            <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
+                <img src={ReactLogo} alt="React Logo" />
+            </Box>
 
-  const drawer = (
-    <div>
-      <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
-        {/* <Logo /> */}
-        <img src={ReactLogo} alt="React Logo" />
-      </Box>
+            <Box sx={{ mb: 5, mx: 2.5 }}>
+                <Box className="accountStyle">
+                    <Box>
+                        <Avatar
+                            src={Profile}
+                            alt="photoURL"
+                            sx={{ width: 56, height: 56 }}
+                        />
+                    </Box>
+                    <Box sx={{ ml: 2 }}>
+                        <Typography
+                            variant="subtitle2"
+                            sx={{ color: "text.primary" }}
+                        >
+                            Rabiul Islam Babu
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{ color: "text.secondary" }}
+                        >
+                            Admin
+                        </Typography>
+                    </Box>
+                </Box>
+            </Box>
+            <List>
+                {navConfig.map((item) => (
+                    <Link to={item.link} style={linkStyle} key={item.id}>
+                        <ListItem
+                            key={item.id}
+                            disablePadding
+                            sx={{ ml: 1.5 }}
+                            className={`${
+                                pathname === item.link ? "active" : "regular"
+                            }`}
+                        >
+                            <ListItemButton>
+                                <ListItemIcon
+                                    sx={{
+                                        color:
+                                            pathname === item.link
+                                                ? "#2065d1"
+                                                : "#637381",
+                                    }}
+                                >
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText primary={item.title} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                ))}
+            </List>
+        </div>
+    );
 
-      <Box sx={{ mb: 5, mx: 2.5 }}>
-        <Box className="accountStyle">
-          <Box>
-            <Avatar
-              src={Profile}
-              alt="photoURL"
-              sx={{ width: 56, height: 56 }}
-            />
-          </Box>
-          <Box sx={{ ml: 2 }}>
-            <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
-              Rabiul Islam Babu
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Admin
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-      <List>
-        {navItem.map((item) => (
-          <Link to={item.link} style={linkStyle} key={item.id}>
-            <ListItem key={item.id} disablePadding sx={{ ml: 1.5 }}  className={`${pathname===item.link?"active":"regular"}`}>
-              <ListItemButton>
-                <ListItemIcon
-                  className={`${pathname===item.link ? "active-icon" : "icon"}`}
+    const container =
+        window !== undefined ? () => window().document.body : undefined;
+
+    return (
+        <Box sx={{ display: "flex" }}>
+            <CssBaseline />
+            <Navbar handleDrawerToggle={handleDrawerToggle} />
+            <Box
+                component="nav"
+                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                aria-label="mailbox folders"
+            >
+                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                <Drawer
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    sx={{
+                        display: { xs: "block", lg: "none" },
+                        "& .MuiDrawer-paper": {
+                            boxSizing: "border-box",
+                            width: drawerWidth,
+                        },
+                    }}
                 >
-                  {item.id === 1 && <WidgetsOutlinedIcon />}
-                  {item.id === 2 && <Inventory2OutlinedIcon />}
-                  {item.id === 3 && <MyLocationOutlinedIcon />}
-                  {item.id === 4 && <PersonOutlineOutlinedIcon />}
-                  {item.id === 5 && <HourglassEmptyOutlinedIcon />}
-                  {item.id === 6 && <ContentPasteOutlinedIcon />}
-                </ListItemIcon>
-                <ListItemText primary={item.title} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </div>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
-  return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <Navbar handleDrawerToggle={handleDrawerToggle} />
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", lg: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: "none", lg: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
-  );
+                    {drawer}
+                </Drawer>
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        display: { xs: "none", lg: "block" },
+                        "& .MuiDrawer-paper": {
+                            boxSizing: "border-box",
+                            width: drawerWidth,
+                        },
+                    }}
+                    open
+                >
+                    {drawer}
+                </Drawer>
+            </Box>
+        </Box>
+    );
 }
 
 export default Sidebar;
