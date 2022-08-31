@@ -28,7 +28,7 @@ const state = {
                         width: 350,
                     },
                     legend: {
-                        show:false
+                        show: true,
                     },
                 },
             },
@@ -39,7 +39,7 @@ const state = {
                         width: 280,
                     },
                     legend: {
-                        show:false
+                        show: false,
                     },
                 },
             },
@@ -50,7 +50,9 @@ const state = {
 export default function PieChart() {
     return (
         <Box>
-            <Typography variant="h6" sx={{mb:3}}>Sales statistics  by month</Typography>
+            <Typography variant="h6" sx={{ mb: 3 }}>
+                Sales statistics by month
+            </Typography>
             <ReactApexChart
                 options={state.options}
                 series={state.series}

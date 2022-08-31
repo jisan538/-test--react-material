@@ -28,6 +28,8 @@ function Sidebar(props) {
         margin: "1rem",
         textDecoration: "none",
         fontWeight: 700,
+        borderRadius: "10px"
+
     };
     const { pathname } = useLocation();
     const drawer = (
