@@ -31,6 +31,7 @@ function Sidebar(props) {
         borderRadius: "10px"
 
     };
+    
     const { pathname } = useLocation();
     const drawer = (
         <div>

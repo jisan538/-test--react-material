@@ -51,7 +51,7 @@ export default function PieChart() {
     return (
         <Box>
             <Typography variant="h6" sx={{ mb: 3 }}>
-                Sales statistics by month
+                Sales statistics by Zone
             </Typography>
             <ReactApexChart
                 options={state.options}

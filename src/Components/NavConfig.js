@@ -41,7 +41,7 @@ const navConfig = [
         title: "Report",
         link: "/report",
         icon: <ContentPasteOutlinedIcon />,
-    },
+    }
 ];
 
 export default navConfig;
