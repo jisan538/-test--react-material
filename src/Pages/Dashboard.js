@@ -1,6 +1,8 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../Components/Sidebar";
+import BarChart from "./Components/BarChart";
+import PieChart from "./Components/PieChart";
 import StateCard from "./Components/StateCard";
 
 export default function Dashboard() {
@@ -24,10 +26,14 @@ export default function Dashboard() {
                 <StateCard sx={{ mb: 5 }} />
                 <Grid container spacing={2} sx={{ mt: 5 }}>
                     <Grid item xs={12} sm={12} md={8}>
-                        <Card sx={{ p: 5 }}></Card>
+                        <Card sx={{ p: 2 }}>
+                            <BarChart />
+                        </Card>
                     </Grid>
                     <Grid item xs={12} sm={12} md={4}>
-                        <Card sx={{ p: 5 }}></Card>
+                        <Card sx={{ p: 2 }}>
+                            <PieChart/>
+                        </Card>
                     </Grid>
                 </Grid>
             </Box>
