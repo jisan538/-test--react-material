@@ -1,10 +1,14 @@
-import React from "react";
-import { Box, Container, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Button, Container, Toolbar, Typography } from "@mui/material";
 import Sidebar from "../Components/Sidebar";
+import SalesmanTable from "./Components/SalesmanTable";
+import AddSalesman from "./Components/AddSalesman";
 
 export default function Salesman() {
     const drawerWidth = 280;
-
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <Box>
             <Sidebar />
@@ -27,8 +31,19 @@ export default function Salesman() {
                         }}
                     >
                         <Typography variant="h6">Sales Man Details</Typography>
+                        <Button
+                            variant="outlined"
+                            sx={{ mr: 2 }}
+                            onClick={handleOpen}
+                        >
+                            Add Salesman
+                        </Button>
+                    </Box>
+                    <Box sx={{ mb: 5 }}>
+                        <SalesmanTable />
                     </Box>
                 </Container>
+                <AddSalesman open={open} handleClose={handleClose} />
             </Box>
         </Box>
     );
