@@ -1,7 +1,7 @@
 import { Box, Grid, Button, Modal, TextField } from "@mui/material";
 import React from "react";
 
-export default function SalesmanView({ handleClose, open, viewProfile }) {
+export default function SalesmanEdit({ handleClose, open, viewProfile }) {
     return (
         <Modal
             open={open}
@@ -45,10 +45,9 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                             />
                             <Box sx={{ mt: 4, width: "100%" }}>
                                 <Grid container spacing={2}>
-                                <Grid item xs={6} md={6}>
+                                    <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="First Name"
                                             defaultValue={data.first_name}
                                             size="medium"
@@ -58,7 +57,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="Last Name"
                                             defaultValue={data.last_name}
                                             size="medium"
@@ -68,7 +66,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="Phone Number"
                                             defaultValue={data.phone}
                                             size="medium"
@@ -78,7 +75,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="National ID"
                                             defaultValue={data.nid}
                                             size="medium"
@@ -88,7 +84,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={12} md={12}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="Address"
                                             defaultValue={data.address}
                                             size="medium"
@@ -98,7 +93,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="Emergency Person"
                                             defaultValue={data.nid}
                                             size="medium"
@@ -108,7 +102,6 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     <Grid item xs={6} md={6}>
                                         <TextField
                                             fullWidth
-                                            disabled
                                             label="Emergency Contact"
                                             defaultValue={data.emergency}
                                             size="medium"
@@ -123,10 +116,9 @@ export default function SalesmanView({ handleClose, open, viewProfile }) {
                                     >
                                         <Button
                                             onClick={handleClose}
-                                            variant="outlined"
-                                            color="error"
+                                            variant="contained"
                                         >
-                                            Okay
+                                            Save
                                         </Button>
                                     </Grid>
                                 </Grid>

@@ -12,6 +12,7 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import data from "../../Assets/salesman.json";
 import SalesmanView from "./SalesmanView";
+import SalesmanEdit from "./SalesmanEdit";
 
 export default function SalesmanTable() {
     // eslint-disable-next-line
@@ -19,6 +20,13 @@ export default function SalesmanTable() {
     const [viewProfile, setViewProfile] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [openView, setOpenView] = useState(false);
+    const [openEdit, setOpenEdit] = useState(false);
+
+    const handleClose = () => {
+        setOpenView(false);
+        setOpenEdit(false);
+    };
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -29,18 +37,19 @@ export default function SalesmanTable() {
         setPage(0);
     };
     const handleEdit = (id) => {
-        console.log("Edit Salesman profile id-", id);
+        setOpenEdit(true);
+        const viewedProfile = salesman.filter((data) => data.id === id);
+        setViewProfile(viewedProfile);
     };
     const handleView = (id) => {
-        setOpen(true);
-        const viewedProfile = salesman.filter((data) =>data.id===id);
+        setOpenView(true);
+        const viewedProfile = salesman.filter((data) => data.id === id);
         setViewProfile(viewedProfile);
     };
     const handleDelete = (id) => {
         console.log("Delete Salesman id-", id);
     };
-    const [open, setOpen] = useState(false);
-    const handleClose = () => setOpen(false);
+    
     return (
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
             <TableContainer component={Paper}>
@@ -88,7 +97,8 @@ export default function SalesmanTable() {
                                     }}
                                 >
                                     <TableCell component="th" scope="row">
-                                        {salesman.first_name} &nbsp; {salesman.last_name}
+                                        {salesman.first_name} &nbsp;{" "}
+                                        {salesman.last_name}
                                     </TableCell>
                                     <TableCell align="center">
                                         {salesman.phone}
@@ -157,7 +167,16 @@ export default function SalesmanTable() {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
             </TableContainer>
-            <SalesmanView open={open} handleClose={handleClose} viewProfile={viewProfile}/>
+            <SalesmanView
+                open={openView}
+                handleClose={handleClose}
+                viewProfile={viewProfile}
+            />
+            <SalesmanEdit
+                open={openEdit}
+                handleClose={handleClose}
+                viewProfile={viewProfile}
+            />
         </Paper>
     );
 }
