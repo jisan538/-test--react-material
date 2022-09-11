@@ -15,10 +15,9 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 export default function AddSalesman({ open, handleClose }) {
     const [images, setImages] = useState([]);
     const maxNumber = 69;
-    const onChange = (imageList, addUpdateIndex) => {
+    const onChange = (imageList) => {
         // data for submit
         setImages(imageList);
-        console.log(imageList, addUpdateIndex);
     };
     return (
         <Modal
@@ -73,8 +72,8 @@ export default function AddSalesman({ open, handleClose }) {
                                             <img
                                                 src={image.data_url}
                                                 alt=""
-                                                width="150
-"
+                                                width="100"
+                                                height="100"
                                                 style={{marginTop:"24px",marginBottom:"24px"}}
                                             />
                                             <Box className="image-item__btn-wrapper" sx={{display: "flex", justifyContent: "center",alignItems: "center"}}>
