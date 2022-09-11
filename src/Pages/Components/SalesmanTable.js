@@ -47,9 +47,9 @@ export default function SalesmanTable() {
         setViewProfile(viewedProfile);
     };
     const handleDelete = (id) => {
-        console.log("Delete Salesman id-", id);
+        let newArray = salesman.filter((data) => data.id !== id);
+        setSalesman(newArray);
     };
-    
     return (
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
             <TableContainer component={Paper}>
@@ -160,7 +160,7 @@ export default function SalesmanTable() {
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 20]}
                     component="div"
-                    count={data.length}
+                    count={salesman.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
