@@ -38,7 +38,6 @@ function Sidebar(props) {
             <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
                 <img src={ReactLogo} alt="React Logo" />
             </Box>
-
             <Box sx={{ mb: 5, mx: 2.5 }}>
                 <Box className="accountStyle">
                     <Box>
@@ -99,7 +98,7 @@ function Sidebar(props) {
         window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex"}}>
             <CssBaseline />
             <Navbar handleDrawerToggle={handleDrawerToggle} />
             <Box

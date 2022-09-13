@@ -1,10 +1,25 @@
 import { Box, Container, Toolbar, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
+import CreateDailyReport from "./Components/CreateDailyReport";
+import data from "../Assets/salesman.json";
+import Dailyloaded from "./Components/Dailyloaded";
 
 export default function Report() {
     const drawerWidth = 280;
-
+    // eslint-disable-next-line
+    const [newArray, setNewArray] = useState(data);
+    const [open, setOpen] = useState(false);
+    const [salesmanReport,setSalesmanReport] = useState([]);
+    const handleChoose = () => {
+        setOpen(true);
+    };
+    const handleClose = () => setOpen(false);
+    const handleClick=(id)=>{
+        const viewedProfile = newArray.filter((data) => data.id === id);
+        setOpen(false);
+        setSalesmanReport(viewedProfile);
+    }
     return (
         <Box>
             <Sidebar />
@@ -26,10 +41,18 @@ export default function Report() {
                             alignItems: "center",
                         }}
                     >
-                        <Typography variant="h6">Report</Typography>
+                        <Typography variant="h6">Daily Report</Typography>
                     </Box>
+                    <CreateDailyReport
+                        newArray={newArray}
+                        open={open}
+                        handleChoose={handleChoose}
+                        handleClose={handleClose}
+                        salesmanReport={salesmanReport}
+                    />
                 </Container>
             </Box>
+            <Dailyloaded newArray={newArray} open={open} handleClose={handleClose} handleClick={handleClick}/>
         </Box>
     );
 }

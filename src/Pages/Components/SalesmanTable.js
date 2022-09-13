@@ -74,9 +74,6 @@ export default function SalesmanTable() {
                                 Address
                             </TableCell>
                             <TableCell sx={{ color: "#2065d1" }} align="center">
-                                Emergency Contact
-                            </TableCell>
-                            <TableCell sx={{ color: "#2065d1" }} align="center">
                                 Action
                             </TableCell>
                         </TableRow>
@@ -108,9 +105,6 @@ export default function SalesmanTable() {
                                     </TableCell>
                                     <TableCell align="center">
                                         {salesman.address}
-                                    </TableCell>
-                                    <TableCell align="center">
-                                        {salesman.emergency}
                                     </TableCell>
                                     <TableCell align="center">
                                         <Tooltip title="View">
