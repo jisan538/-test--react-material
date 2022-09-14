@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-
+import LoopOutlinedIcon from '@mui/icons-material/LoopOutlined';
+import DoneAllOutlinedIcon from '@mui/icons-material/DoneAllOutlined';
 export default function CreateDailyReport({ handleChoose, salesmanReport }) {
     return (
         <Box
@@ -22,9 +23,9 @@ export default function CreateDailyReport({ handleChoose, salesmanReport }) {
                     Salesman and Zone
                 </Typography>
                 {salesmanReport.length === 0 ? (
-                    <Button onClick={handleChoose}>Choose</Button>
+                    <Button onClick={handleChoose} sx={{fontWeight:"bold"}}><DoneAllOutlinedIcon/>&nbsp;Choose</Button>
                 ) : (
-                    <Button onClick={handleChoose}>Change</Button>
+                    <Button onClick={handleChoose} sx={{fontWeight:"bold"}}><LoopOutlinedIcon/>&nbsp;Change</Button>
                 )}
             </Box>
             {salesmanReport.map((data) => {
