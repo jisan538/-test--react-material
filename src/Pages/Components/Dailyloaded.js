@@ -1,5 +1,6 @@
 import { Box, Dialog, Typography } from "@mui/material";
 import React from "react";
+import "./Style/Report.css"
 
 export default function Dailyloaded({ open, handleClose, newArray, handleClick }) {
     
@@ -19,6 +20,7 @@ export default function Dailyloaded({ open, handleClose, newArray, handleClick }
                             flexDirection: "column",
                             cursor: "pointer",
                         }}
+                        className="salesman"
                         onClick={()=>handleClick(data.id)}
                     >
                         <Typography>

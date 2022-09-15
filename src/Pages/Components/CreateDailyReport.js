@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-
 export default function CreateDailyReport({ handleChoose, salesmanReport }) {
     return (
         <Box
@@ -22,9 +21,9 @@ export default function CreateDailyReport({ handleChoose, salesmanReport }) {
                     Salesman and Zone
                 </Typography>
                 {salesmanReport.length === 0 ? (
-                    <Button onClick={handleChoose}>Choose</Button>
+                    <Button onClick={handleChoose} size="small">Choose</Button>
                 ) : (
-                    <Button onClick={handleChoose}>Change</Button>
+                    <Button onClick={handleChoose} size="small">Change</Button>
                 )}
             </Box>
             {salesmanReport.map((data) => {
