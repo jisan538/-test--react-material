@@ -65,7 +65,7 @@ export default function Product() {
               <Button variant="outlined" sx={{ mr: 2 }} onClick={handleOpen}>
                 Add Product
               </Button>
-              <Button variant="contained">
+              <Button variant="contained" sx={{boxShadow: "0px 8px 16px rgba(25, 118, 210, 0.24)"}}>
                 <CSVLink
                   headers={headers}
                   data={product}

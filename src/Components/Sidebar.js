@@ -28,11 +28,11 @@ function Sidebar(props) {
         margin: "1rem",
         textDecoration: "none",
         fontWeight: 700,
-        borderRadius: "10px"
-
+        borderRadius: "10px",
     };
-    
     const { pathname } = useLocation();
+
+
     const drawer = (
         <div>
             <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
@@ -65,30 +65,38 @@ function Sidebar(props) {
             </Box>
             <List>
                 {navConfig.map((item) => (
-                    <Link to={item.link} style={linkStyle} key={item.id}>
-                        <ListItem
+                    <>
+                        <Link
+                            to={item.link}
+                            style={linkStyle}
                             key={item.id}
-                            disablePadding
-                            sx={{ ml: 1.5 }}
-                            className={`${
-                                pathname === item.link ? "active" : "regular"
-                            }`}
                         >
-                            <ListItemButton>
-                                <ListItemIcon
-                                    sx={{
-                                        color:
-                                            pathname === item.link
-                                                ? "#2065d1"
-                                                : "#637381",
-                                    }}
-                                >
-                                    {item.icon}
-                                </ListItemIcon>
-                                <ListItemText primary={item.title} />
-                            </ListItemButton>
-                        </ListItem>
-                    </Link>
+                            <ListItem
+                                key={item.id}
+                                disablePadding
+                                sx={{ ml: 1.5 }}
+                                className={`${
+                                    pathname === item.link
+                                        ? "active"
+                                        : "regular"
+                                }`}
+                            >
+                                <ListItemButton>
+                                    <ListItemIcon
+                                        sx={{
+                                            color:
+                                                pathname === item.link
+                                                    ? "#2065d1"
+                                                    : "#637381",
+                                        }}
+                                    >
+                                        {item.icon}
+                                    </ListItemIcon>
+                                    <ListItemText primary={item.title} />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+                    </>
                 ))}
             </List>
         </div>
@@ -98,7 +106,7 @@ function Sidebar(props) {
         window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: "flex"}}>
+        <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <Navbar handleDrawerToggle={handleDrawerToggle} />
             <Box
