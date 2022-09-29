@@ -41,7 +41,7 @@ export default function Report() {
                             alignItems: "center",
                         }}
                     >
-                        <Typography variant="h6">Daily Report</Typography>
+                        <Typography variant="h6">Create Daily Report</Typography>
                     </Box>
                     <CreateDailyReport
                         newArray={newArray}

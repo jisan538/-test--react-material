@@ -1,3 +1,4 @@
-.salesman:hover{
-    background-color: aquamarine;
+.salesman:hover {
+    border-radius:"10px";
+  background: rgba(32, 101, 209, 0.1);
 }
