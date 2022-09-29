@@ -41,7 +41,7 @@ export default function Report() {
                             alignItems: "center",
                         }}
                     >
-                        <Typography variant="h6">Create Daily Report</Typography>
+                        <Typography sx={{fontSize:"24px",fontWeight:700}}>Create Daily Report</Typography>
                     </Box>
                     <CreateDailyReport
                         newArray={newArray}

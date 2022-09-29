@@ -86,7 +86,7 @@ export default function AccountPopOver() {
                         rabiulislam@gmail.com
                     </Typography>
                 </Box>
-                <Divider />
+                <Divider  variant="middle" sx={{ borderStyle: 'dashed' }} />
                 {Settings.map((data) => {
                     return (
                         <MenuItem onClick={handleClosePopOver} key={data.id}>
@@ -101,7 +101,7 @@ export default function AccountPopOver() {
                         </MenuItem>
                     );
                 })}
-                <Divider />
+        <Divider  variant="middle" sx={{ borderStyle: 'dashed' }} />
                 <MenuItem onClick={handleClosePopOver}>
                     <Typography
                         sx={{

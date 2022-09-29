@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
                   {data.stock > 19 && (
                     <Typography
                       sx={{
-                        backgroundColor: "green",
+                        backgroundColor: "#00AB55",
                         p: "4px",
                         color: "white",
                         borderRadius: "4px",
@@ -33,7 +33,7 @@ export default function ProductCard({ product }) {
                   {data.stock < 19 && data.stock > 1 && (
                     <Typography
                       sx={{
-                        backgroundColor: "orange",
+                        backgroundColor: "#FFC107",
                         p: "4px",
                         color: "white",
                         borderRadius: "4px",
@@ -46,7 +46,7 @@ export default function ProductCard({ product }) {
                   {data.stock === 0 && (
                     <Typography
                       sx={{
-                        backgroundColor: "red",
+                        backgroundColor: "#FF4842",
                         p: "4px",
                         color: "white",
                         borderRadius: "4px",
@@ -61,14 +61,13 @@ export default function ProductCard({ product }) {
               <CardMedia
                 component="img"
                 alt="green iguana"
-                height="160
-                            "
+                height="160"
                 src={data.image}
                 sx={{ objectFit: "contain" }}
               />
               <CardContent>
                 <Box sx={{ height: "80px" }}>
-                  <Typography variant="body" sx={{ fontWeight: "bold" }}>
+                  <Typography  sx={{ fontSize:"14px",fontWeight: 600 }}>
                     {data.title}
                   </Typography>
                 </Box>
@@ -81,8 +80,7 @@ export default function ProductCard({ product }) {
                   }}
                 >
                   <Typography
-                    variant="h6"
-                    sx={{ color: "red", fontWeight: 700 }}
+                    sx={{ fontSize:"16px",color:"#212B36"}}
                   >
                     ৳{data.price}
                   </Typography>
