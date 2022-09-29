@@ -140,6 +140,7 @@ function Sidebar(props) {
                         "& .MuiDrawer-paper": {
                             boxSizing: "border-box",
                             width: drawerWidth,
+                            borderRightStyle: 'dashed'
                         },
                     }}
                     open
