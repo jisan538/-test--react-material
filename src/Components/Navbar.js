@@ -3,14 +3,17 @@ import {
     Box,
     IconButton,
     Toolbar,
+    useMediaQuery,
 } from "@mui/material";
 import MenuOpenRoundedIcon from "@mui/icons-material/MenuOpenRounded";
 import React from "react";
 import AccountPopOver from "./AccountPopOver";
 import TimerFunction from "./TimerFunction";
+import SearchBar from "./SearchBar";
 
 const drawerWidth = 280;
 export default function Navbar({ handleDrawerToggle }) {
+    const matches = useMediaQuery('(min-width:600px)');
 
     return (
         <AppBar
@@ -43,6 +46,7 @@ export default function Navbar({ handleDrawerToggle }) {
                         width: "100%",
                     }}
                 >
+                    <SearchBar/>
                     <TimerFunction/>
                     <AccountPopOver />
                 </Box>

@@ -1,19 +1,12 @@
 import {
   Box,
   Button,
-  FormControl,
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Container } from "@mui/system";
 import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import ProductCard from "./Components/ProductCard";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import productData from "../Assets/product.json";
 import { CSVLink } from "react-csv";
 import AddProduct from "./Components/AddProduct";
@@ -23,10 +16,7 @@ export default function Product() {
   // eslint-disable-next-line
   const [product, setProduct] = useState(productData);
   // eslint-disable-next-line
-  const [searchByName, setSearchByName] = useState("");
-  const handleOnChange = (event) => {
-    setSearchByName(event.target.value);
-  };
+
   const fileName = "users-detail";
   // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
@@ -51,7 +41,7 @@ export default function Product() {
         }}
       >
         <Toolbar />
-        <Container>
+        <>
           <Box
             sx={{
               mb: 4,
@@ -80,31 +70,8 @@ export default function Product() {
               </Button>
             </Box>
           </Box>
-          <Box sx={{ mb: 5 }}>
-            <FormControl fullWidth variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">
-                Search By Name
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-password"
-                onChange={handleOnChange}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton>
-                      <SearchOutlinedIcon />
-                    </IconButton>
-                  </InputAdornment>
-                }
-                aria-describedby="outlined-weight-helper-text"
-                inputProps={{
-                  "aria-label": "weight",
-                }}
-                label="Search By Name"
-              />
-            </FormControl>
-          </Box>
           <ProductCard product={product} />
-        </Container>
+        </>
         <AddProduct open={open} handleClose={handleClose} />
       </Box>
     </Box>
