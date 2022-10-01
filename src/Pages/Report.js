@@ -1,7 +1,7 @@
 import { Box, Container, Toolbar, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../Layout/Sidebar/Sidebar";
-import CreateDailyReport from "../Components/CreateDailyReport";
+import CreateDailyReport from "../Components/DailyReport/CreateDailyReport";
 import data from "../Assets/salesman.json";
 import Dailyloaded from "../Components/Dailyloaded";
 

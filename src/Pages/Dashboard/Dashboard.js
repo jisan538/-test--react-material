@@ -1,9 +1,9 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../../Layout/Sidebar/Sidebar";
-import BarChart from "../../Components/BarChart";
-import PieChart from "../../Components/PieChart";
-import StateCard from "../../Components/StateCard";
+import BarChart from "../../Components/Dashboard/BarChart";
+import StateCard from "../../Components/Dashboard/StateCard";
+import PieChart from "../../Components/Dashboard/PieChart";
 
 export default function Dashboard() {
     const drawerWidth = 280;
@@ -32,7 +32,7 @@ export default function Dashboard() {
                     </Grid>
                     <Grid item xs={12} sm={12} md={4}>
                         <Card sx={{ p: 2 }}>
-                            <PieChart/>
+                            <PieChart />
                         </Card>
                     </Grid>
                 </Grid>

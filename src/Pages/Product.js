@@ -6,10 +6,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../Layout/Sidebar/Sidebar";
-import ProductCard from "../Components/ProductCard";
 import productData from "../Assets/product.json";
 import { CSVLink } from "react-csv";
-import AddProduct from "../Components/AddProduct";
+import AddProduct from "../Components/Product/AddProduct";
+import ProductCard from "../Components/Product/ProductCard";
 
 export default function Product() {
   const drawerWidth = 280;

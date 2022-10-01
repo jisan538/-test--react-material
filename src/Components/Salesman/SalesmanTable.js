@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { IconButton, TablePagination } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import data from "../Assets/salesman.json";
+import data from "../../Assets/salesman.json";
 import SalesmanView from "./SalesmanView";
 import SalesmanEdit from "./SalesmanEdit";
 import ActionPopOver from "./ActionPopOver";
