@@ -1,9 +1,9 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../Layout/Sidebar/Sidebar";
-import CreateDailyLoad from "../Components/DailyReport/CreateDailyReport";
 import data from "../Assets/salesman.json";
-import Dailyloaded from "../Components/DailyReport/Dailyloaded";
+import CreateProductLoad from "../Components/ProductLoad/CreateProductLoad";
+import ActiveSalesman from "../Components/ProductLoad/ActiveSalesman";
 export default function DailyLoad() {
     const drawerWidth = 280;
     // eslint-disable-next-line
@@ -43,7 +43,7 @@ export default function DailyLoad() {
                         Create Daily Load
                     </Typography>
                 </Box>
-                <CreateDailyLoad
+                <CreateProductLoad
                     newArray={newArray}
                     open={open}
                     handleChoose={handleChoose}
@@ -51,7 +51,7 @@ export default function DailyLoad() {
                     salesmanReport={salesmanReport}
                 />
             </Box>
-            <Dailyloaded
+            <ActiveSalesman
                 newArray={newArray}
                 open={open}
                 handleClose={handleClose}

@@ -1,9 +1,9 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../Layout/Sidebar/Sidebar";
-import CreateDailyReport from "../Components/DailyReport/CreateDailyReport";
 import data from "../Assets/salesman.json";
-import Dailyloaded from "../Components/DailyReport/Dailyloaded";
+import CreateDailyLoad from "../Components/DailyLoad/CreateDailyLoad";
+import DailyLoad from "../Components/DailyLoad/DailyLoad";
 
 export default function Report() {
     const drawerWidth = 280;
@@ -44,7 +44,7 @@ export default function Report() {
                         Create Daily Report
                     </Typography>
                 </Box>
-                <CreateDailyReport
+                <CreateDailyLoad
                     newArray={newArray}
                     open={open}
                     handleChoose={handleChoose}
@@ -52,7 +52,7 @@ export default function Report() {
                     salesmanReport={salesmanReport}
                 />
             </Box>
-            <Dailyloaded
+            <DailyLoad
                 newArray={newArray}
                 open={open}
                 handleClose={handleClose}

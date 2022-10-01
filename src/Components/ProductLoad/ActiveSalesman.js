@@ -2,7 +2,7 @@ import { Box, Dialog, Typography } from "@mui/material";
 import React from "react";
 import "../Style/Report.css";
 
-export default function Dailyloaded({
+export default function ActiveSalesman({
   open,
   handleClose,
   newArray,
