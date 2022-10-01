@@ -1,6 +1,6 @@
 import { Box, Dialog, Typography } from "@mui/material";
 import React from "react";
-import "./Style/Report.css";
+import "../Style/Report.css";
 
 export default function Dailyloaded({
   open,
@@ -12,8 +12,6 @@ export default function Dailyloaded({
     <Dialog
       open={open}
       onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
       sx={{borderRadius:"10px"}}
     >
       <Box

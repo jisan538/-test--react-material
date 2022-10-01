@@ -1,10 +1,24 @@
-import { Box, Container, Toolbar, Typography } from "@mui/material";
-import React from "react";
+import { Box, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
 import Sidebar from "../Layout/Sidebar/Sidebar";
-
+import CreateDailyLoad from "../Components/DailyReport/CreateDailyReport";
+import data from "../Assets/salesman.json";
+import Dailyloaded from "../Components/DailyReport/Dailyloaded";
 export default function DailyLoad() {
     const drawerWidth = 280;
-
+    // eslint-disable-next-line
+    const [newArray, setNewArray] = useState(data);
+    const [open, setOpen] = useState(false);
+    const [salesmanReport, setSalesmanReport] = useState([]);
+    const handleChoose = () => {
+        setOpen(true);
+    };
+    const handleClose = () => setOpen(false);
+    const handleClick = (id) => {
+        const viewedProfile = newArray.filter((data) => data.id === id);
+        setOpen(false);
+        setSalesmanReport(viewedProfile);
+    };
     return (
         <Box>
             <Sidebar />
@@ -17,19 +31,32 @@ export default function DailyLoad() {
                 }}
             >
                 <Toolbar />
-                <Container>
-                    <Box
-                        sx={{
-                            mb: 4,
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                        }}
-                    >
-                        <Typography variant="h6">Daily Load</Typography>
-                    </Box>
-                </Container>
+                <Box
+                    sx={{
+                        mb: 4,
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Typography sx={{ fontSize: "24px", fontWeight: 700 }}>
+                        Create Daily Load
+                    </Typography>
+                </Box>
+                <CreateDailyLoad
+                    newArray={newArray}
+                    open={open}
+                    handleChoose={handleChoose}
+                    handleClose={handleClose}
+                    salesmanReport={salesmanReport}
+                />
             </Box>
+            <Dailyloaded
+                newArray={newArray}
+                open={open}
+                handleClose={handleClose}
+                handleClick={handleClick}
+            />
         </Box>
     );
 }
