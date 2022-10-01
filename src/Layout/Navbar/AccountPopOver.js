@@ -8,9 +8,9 @@ import {
     Divider,
 } from "@mui/material";
 import React, { useState } from "react";
-import Profile from "../Assets/Images/profile.jpg";
+import Profile from "../../Assets/Images/profile.jpg";
 
-import Settings from "../Components/ProfileSettings";
+import Settings from "./ProfileSettings";
 export default function AccountPopOver() {
     const [accountPopOver, setAccountPopOver] = useState(false);
     const handleOpenPopOver = (event) => {

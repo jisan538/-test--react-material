@@ -13,6 +13,7 @@ import SearchBar from "./SearchBar";
 
 const drawerWidth = 280;
 export default function Navbar({ handleDrawerToggle }) {
+    // eslint-disable-next-line
     const matches = useMediaQuery('(min-width:600px)');
 
     return (

@@ -9,12 +9,12 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ReactLogo from "../Assets/Logo.svg";
-import "./Style/Sidebar.css";
-import Navbar from "./Navbar";
-import {navConfig,settings} from "./NavConfig";
+import ReactLogo from "../../Assets/Logo.svg";
+import "../Style/Sidebar.css";
+import Navbar from "../Navbar/Navbar";
+import {navConfig,settings} from "../Navbar/NavConfig";
 import { Avatar, Typography } from "@mui/material";
-import Profile from "../Assets/Images/profile.jpg";
+import Profile from "../../Assets/Images/profile.jpg";
 const drawerWidth = 280;
 
 function Sidebar(props) {

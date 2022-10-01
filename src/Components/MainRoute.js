@@ -2,7 +2,7 @@ import React from "react";
 import { Route,Routes } from "react-router-dom";
 import Check from "../Pages/Check";
 import DailyLoad from "../Pages/DailyLoad";
-import Dashboard from "../Pages/Dashboard";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 import Product from "../Pages/Product";
 import Report from "../Pages/Report";
 import Salesman from "../Pages/Salesman";

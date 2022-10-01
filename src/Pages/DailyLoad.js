@@ -1,6 +1,6 @@
 import { Box, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import Sidebar from "../Components/Sidebar";
+import Sidebar from "../Layout/Sidebar/Sidebar";
 
 export default function DailyLoad() {
     const drawerWidth = 280;

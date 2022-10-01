@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, Button, Container, Toolbar, Typography } from "@mui/material";
-import Sidebar from "../Components/Sidebar";
-import SalesmanTable from "./Components/SalesmanTable";
-import AddSalesman from "./Components/AddSalesman";
+import Sidebar from "../Layout/Sidebar/Sidebar";
+import SalesmanTable from "../Components/SalesmanTable";
+import AddSalesman from "../Components/AddSalesman";
 
 export default function Salesman() {
     const drawerWidth = 280;

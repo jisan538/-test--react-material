@@ -1,7 +1,7 @@
 import { Card, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import "./Style/StateCardStyle.css";
-import stateData from "../../Assets/state.json";
+import stateData from "../Assets/state.json";
 export default function StateCard() {
   // eslint-disable-next-line
   const [state, setState] = useState(stateData);

@@ -1,9 +1,9 @@
 import { Box, Card, Grid, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import Sidebar from "../Components/Sidebar";
-import BarChart from "./Components/BarChart";
-import PieChart from "./Components/PieChart";
-import StateCard from "./Components/StateCard";
+import Sidebar from "../../Layout/Sidebar/Sidebar";
+import BarChart from "../../Components/BarChart";
+import PieChart from "../../Components/PieChart";
+import StateCard from "../../Components/StateCard";
 
 export default function Dashboard() {
     const drawerWidth = 280;

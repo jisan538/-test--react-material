@@ -1,9 +1,9 @@
 import { Box, Container, Toolbar, Typography } from "@mui/material";
 import React, { useState } from "react";
-import Sidebar from "../Components/Sidebar";
-import CreateDailyReport from "./Components/CreateDailyReport";
+import Sidebar from "../Layout/Sidebar/Sidebar";
+import CreateDailyReport from "../Components/CreateDailyReport";
 import data from "../Assets/salesman.json";
-import Dailyloaded from "./Components/Dailyloaded";
+import Dailyloaded from "../Components/Dailyloaded";
 
 export default function Report() {
     const drawerWidth = 280;

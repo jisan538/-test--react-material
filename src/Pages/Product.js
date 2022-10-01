@@ -5,11 +5,11 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import Sidebar from "../Components/Sidebar";
-import ProductCard from "./Components/ProductCard";
+import Sidebar from "../Layout/Sidebar/Sidebar";
+import ProductCard from "../Components/ProductCard";
 import productData from "../Assets/product.json";
 import { CSVLink } from "react-csv";
-import AddProduct from "./Components/AddProduct";
+import AddProduct from "../Components/AddProduct";
 
 export default function Product() {
   const drawerWidth = 280;
