@@ -18,8 +18,8 @@ export default function CreateProductLoad({ handleChoose, salesmanReport }) {
           handleChoose={handleChoose}
         />
         <ProductLoadInformation />
-      </Box>
       <AddProduct salesmanReport={salesmanReport} />
+      </Box>
       <Box
         sx={{
           display: "flex",

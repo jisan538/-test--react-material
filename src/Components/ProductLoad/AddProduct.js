@@ -16,11 +16,15 @@ export default function AddProduct({ salesmanReport }) {
     const [selectedProduct, setSelectedProduct] = useState();
     // eslint-disable-next-line
     const [availableProducts, setAvailableProducts] = useState([]);
+    // eslint-disable-next-line
+    const [loadProduct, setLoadProduct] = useState();
     useEffect(() => {
         const availableProducts = products.filter((data) => data.stock !== 0);
         setAvailableProducts(availableProducts);
     }, []);
-
+    const handleLoad=(e)=>{
+      setLoadProduct(e.target.value);
+    }
     return (
         <>
             {salesmanReport.length !== 0 && (
@@ -65,13 +69,15 @@ export default function AddProduct({ salesmanReport }) {
                             <TextField fullWidth label="Rate" size="small" value={selectedProduct?.price} defaultValue={0}/>
                         </Grid>
                         <Grid item md={2}>
-                            <TextField fullWidth label="Load" size="small" />
+                            <TextField fullWidth label="Load" size="small" onChange={handleLoad} value={loadProduct}/>
                         </Grid>
                         <Grid item md={2}>
                             <TextField
                                 fullWidth
                                 label="Total Price"
                                 size="small"
+                                value={loadProduct*selectedProduct?.price}
+                                defaultValue={0}
                             />
                         </Grid>
                     </Grid>
