@@ -7,7 +7,6 @@ import {
     Typography,
   } from "@mui/material";
 export default function SelectSalesMan({handleChoose, salesmanReport}) {
-    console.log(salesmanReport.length);
   return (
     <Box sx={{ p: 4 }}>
     <Box

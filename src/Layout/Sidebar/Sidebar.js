@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ReactLogo from "../../Assets/Logo.svg";
 import "../Style/Sidebar.css";
 import Navbar from "../Navbar/Navbar";
-import {navConfig,settings} from "../Navbar/NavConfig";
+import {navConfig} from "../Navbar/NavConfig";
 import { Avatar, Typography } from "@mui/material";
 import Profile from "../../Assets/Images/profile.jpg";
 const drawerWidth = 280;
@@ -32,7 +32,6 @@ function Sidebar(props) {
     };
     const { pathname } = useLocation();
 
-    console.log(settings);
     const drawer = (
         <div>
             <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
