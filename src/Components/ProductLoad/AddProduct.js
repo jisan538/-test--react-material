@@ -42,7 +42,7 @@ export default function AddProduct({salesmanReport}) {
             <Grid item md={4}>
               <Autocomplete
                 disablePortal
-                options={products}
+                options={availableProducts}
                 fullWidth
                 size="small"
                 getOptionLabel={(option) => option.title}
