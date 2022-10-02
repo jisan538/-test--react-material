@@ -14,11 +14,12 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 export default function Product() {
     const drawerWidth = 280;
     const [tagLists, setTagLists] = useState([{ name: ""}]);
-    const handleServiceChange = (e, index) => {
-      const { name, value } = e.target;
-      const list = [...tagLists];
-      list[index][name] = value;
-      setTagLists(list);
+    const handleChange = (e, index) => {
+      const value = e.target.value;
+      const list = [...tagLists]
+      // list.push(value)
+      // setTagLists(list)
+      console.log(value,index);
     };
     const handleAddTag = () => {
         setTagLists([...tagLists, { name: ""}]);
@@ -58,7 +59,7 @@ export default function Product() {
                         </Typography>
                         {tagLists.map((data, index) => {
                             return (
-                                <>
+                                <Box key={index}>
                                     <Grid container spacing={1}>
                                         <Grid item md={12}>
                                             <TextField
@@ -66,8 +67,10 @@ export default function Product() {
                                                 fullWidth
                                                 label="Stock"
                                                 size="small"
+                                                name="service"
+                                                type="text"
                                                 value={data.name}
-                                                onChange={(e) => handleServiceChange(e, index)}
+                                                onChange={(value) => handleChange(value,index)}
                                             />
                                         </Grid>
                                     </Grid>
@@ -92,7 +95,7 @@ export default function Product() {
                                             &nbsp; Remove
                                         </Button>
                                     </Box>
-                                </>
+                                </Box>
                             );
                         })}
                     </Box>
